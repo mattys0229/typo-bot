@@ -1,11 +1,11 @@
 var token = "by using this program you acknowledge that this can get you banned"
 
-var bot = new Eris("eeee");
-
+var bot = new Eris(token);
 const Eris = require("eris");
-var chancenatypo = 0.85;
-var kdypise = 1
-
+console.log(" !!! warning !!! ")
+console.log(" !!! using this program CAN get you banned !!! ")
+console.log(" !!! use it on your own risk !!! ")
+console.log(" !!! warning !!! ")
 function rand(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
@@ -35,33 +35,30 @@ function accentsTidy(s){ //pasted
 
 function rotate(letter){
 var newsentence = ""
-kdypise = Math.floor(Math.random())
 for (var j = 0; j < letter.length; j++)
 {
 var amigoingtodoshit = false
 
 if (letter[j] == " ")
 {
-	newsentence += " ";
-	kdypise += Math.floor(Math.random() * 2.5)
-	continue;
+    newsentence += " ";
+    continue;
 }
 if (j % 4 == 0){
-	newsentence += letter[j]
-	kdypise += Math.floor(Math.random() * 2.5)
-	continue;
+    newsentence += letter[j]
+    continue;
 }
 
 for (var i = 0; i < keyb.length; i++) {
 if ( (keyb[i].includes(letter[j] ) ) )
 {
-	amigoingtodoshit = true
+    amigoingtodoshit = true
 }
 }
 
 if (!amigoingtodoshit){
-	newsentence += letter[j]
-	continue;
+    newsentence += letter[j]
+    continue;
 }
 
 
@@ -82,7 +79,7 @@ case 0:
   // -1 - 1
 if (keyb[arrind][res + moveby] == undefined)
 {
-	moveby = 0 - moveby
+    moveby = 0 - moveby
 }
 
 res += moveby;
@@ -94,7 +91,7 @@ if (keyb[arrind + 1] != undefined && keyb[arrind - 1] != undefined && keyb[arrin
 
 if (keyb[arrind + moveby] == undefined)
 {
-	moveby = 0 - moveby
+    moveby = 0 - moveby
 }
 
 arrind += moveby;
@@ -111,16 +108,14 @@ bot.connect(); // Get the bot to connect to Discord
 
 bot.on("messageCreate", (msg) => {
     if(msg.author.id == bot.user.id) {
-	//console.log(msg)
+    //console.log(msg)
 
-    	if(msg.content.startsWith("exc"))
-    		return;
+        if(msg.content.startsWith("exc"))
+            return;
 
-        //bot.createMessage(msg.channel.id, "Pong!");
-        var jebnutystring = rotate(msg.content.toString())
-        console.log(msg.content + " -> " + jebnutystring)
+        var strWithTypos = rotate(msg.content.toString())
+        console.log(msg.content + " -> " + strWithTypos)
         console.log("")
-    	bot.editMessage(msg.channel.id, msg.id, jebnutystring);
-        // Send a message in the same channel with "Pong!"
+        bot.editMessage(msg.channel.id, msg.id, strWithTypos);
     } 
 });

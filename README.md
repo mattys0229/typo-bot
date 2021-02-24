@@ -2,7 +2,7 @@ a nodejs discord selfbot that changes your messages so they look like you made t
 
 its bad but it works 😃
 
-<h1>usage:<h1>
+<h1>usage:</h1>
 
 fill your token into the first line of the code
 

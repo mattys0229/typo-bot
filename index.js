@@ -37,7 +37,7 @@ function rotate(letter){
 var newsentence = ""
 for (var j = 0; j < letter.length; j++)
 {
-var amigoingtodoshit = false
+var amigoingtodostuff = false
 
 if (letter[j] == " ")
 {
@@ -52,11 +52,11 @@ if (j % 4 == 0){
 for (var i = 0; i < keyb.length; i++) {
 if ( (keyb[i].includes(letter[j] ) ) )
 {
-    amigoingtodoshit = true
+    amigoingtodostuff = true
 }
 }
 
-if (!amigoingtodoshit){
+if (!amigoingtodostuff){
     newsentence += letter[j]
     continue;
 }
